@@ -9,21 +9,20 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tb_user")
+@Table(name = "tb_user")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String emai;
+	private String email;
 	
 	@ManyToOne
 	@JoinColumn(name = "department_id")
 	private Department department;
 	
 	public User() {
-		
 	}
 
 	public Long getId() {
@@ -42,12 +41,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getEmai() {
-		return emai;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmai(String emai) {
-		this.emai = emai;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Department getDepartment() {
@@ -57,5 +56,4 @@ public class User {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-
 }
